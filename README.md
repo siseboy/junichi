@@ -1,0 +1,2 @@
+# junichi
+Typecho Theme
