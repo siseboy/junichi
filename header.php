@@ -28,9 +28,9 @@
 	<div class="browsehappy" role="dialog">你正在使用一个过时的浏览器，为了正常的访问, 请<a href="http://browsehappy.com/" target="_blank">升级你的浏览器</a>以查看此页面。</div>
 <![endif]-->
 <div class="container">
-    <div class="left-col">
+    <div class="left-col" style="background-image: url(<?php if($this->options->iosicon): $this->options->iosicon(); else: $this->options->themeUrl('images/left-bg.jpg');endif; ?>);">
         <header id="header">
-            <div class="profilepic"><a href="/"></a></div>
+            <div class="profilepic"><a href="/" style="background-image: url(<?php if($this->options->favicon): $this->options->favicon(); else: $this->options->themeUrl('images/favicon.png');endif; ?>);"></a></div>
             <h1><a href="/"><?php $this->options->title() ?></a></h1>
             <p class="subtitle"><?php $this->options->slogan(); ?></p>
             <nav id="main-nav">

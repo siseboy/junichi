@@ -5,6 +5,12 @@ function themeConfig($form) {
 	$slogan = new Typecho_Widget_Helper_Form_Element_Text('slogan', NULL, NULL, _t('logo下边的标语'), _t('在这里输入标语'));
 	$form->addInput($slogan);
 
+	//图片设置
+	$favicon = new Typecho_Widget_Helper_Form_Element_Text('favicon', NULL, NULL, _t('头像&Favicon'), _t('在这里输入头像链接,带http:// ,不填则使用主题自带的图片'));
+	$form->addInput($favicon);
+	$iosicon = new Typecho_Widget_Helper_Form_Element_Text('iosicon', NULL, NULL, _t('左侧背景图'), _t('在这里输入背景图链接,带http:// ,不填则使用主题自带的图片'));
+	$form->addInput($iosicon);
+    
 	//Pjax加速
 	$search_form = new Typecho_Widget_Helper_Form_Element_Checkbox('search_form',
 	array('Pjax' => _t('启用Pjax加速站点,勾上即可，为使原生评论生效需要到设置-评论，去掉开启垃圾评论过滤'),),array('ShowSearch'), _t('设置开启Pjax'));
@@ -19,7 +25,6 @@ function themeConfig($form) {
 	$form->addInput($socialtwitter);
 	$socialgoogle = new Typecho_Widget_Helper_Form_Element_Text('socialgoogle', NULL, NULL, _t('输入Google +链接'), _t('在这里输入Google +链接,带http://'));
 	$form->addInput($socialgoogle);
-
 
 	//附件源地址
 	$src_address = new Typecho_Widget_Helper_Form_Element_Text('src_add', NULL, NULL, _t('替换前地址'), _t('即你的附件存放链接，如http://www.yourblog.com/usr/uploads/'));
@@ -73,3 +78,28 @@ array_push($views, $cid);
     echo $row['views'];
 }
 
+//获取评论的锚点链接
+function get_comment_at($coid)
+{
+    $db   = Typecho_Db::get();
+    $prow = $db->fetchRow($db->select('parent')->from('table.comments')
+                                 ->where('coid = ? AND status = ?', $coid, 'approved'));
+    $parent = $prow['parent'];
+    if ($parent != "0") {
+        $arow = $db->fetchRow($db->select('author')->from('table.comments')
+                                     ->where('coid = ? AND status = ?', $parent, 'approved'));
+        $author = $arow['author'];
+        $href   = '<a href="#comment-' . $parent . '">@' . $author . '</a>';
+        echo $href;
+    } else {
+        echo '';
+    }
+}
+//输出评论内容
+function get_filtered_comment($coid){
+    $db   = Typecho_Db::get();
+    $rs=$db->fetchRow($db->select('text')->from('table.comments')
+                                 ->where('coid = ? AND status = ?', $coid, 'approved'));
+    $content=$rs['text'];
+    echo $content;
+}

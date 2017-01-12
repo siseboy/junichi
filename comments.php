@@ -1,6 +1,5 @@
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-
 <?php
+$GLOBALS['z']  = $this->options->CDNURL;
 function threadedComments($comments, $options) {
     $commentClass = '';
     if ($comments->authorId) {
@@ -18,15 +17,20 @@ function threadedComments($comments, $options) {
     }
 ?>
 
-<li data-no-instant id="li-<?php $comments->theId(); ?>" class="comment-body<?php
-if ($comments->levels > 0) {
-    echo ' comment-child';
+<li data-no-instant id="li-<?php $comments->theId(); ?>" class="comment-body<?php 
+if ($depth > 1 && $depth < 3) {
+    echo ' comment-child ';
+    $comments->levelsAlt('comment-level-odd', ' comment-level-even');
+}
+else if( $depth > 2){
+    echo ' comment-child2';
     $comments->levelsAlt(' comment-level-odd', ' comment-level-even');
-} else {
+}
+else {
     echo ' comment-parent';
 }
 $comments->alt(' comment-odd', ' comment-even');
-echo $commentClass;
+echo $commentClass; 
 ?>">
     <div id="<?php $comments->theId(); ?>">
         <?php
@@ -40,6 +44,7 @@ echo $commentClass;
 
         <img class="avatar" src="<?php echo $avatar ?>" alt="<?php echo $comments->author; ?>" width="<?php echo $size ?>" height="<?php echo $size ?>" />
         <div class="comment-main">
+            <p class="comment-at"><?php get_comment_at($comments->coid)?></p>
             <?php $comments->content(); ?>
             <div class="comment-meta">
                 <span class="comment-author"><?php echo $author; ?></span>
@@ -98,10 +103,11 @@ echo $commentClass;
             <?php $security = $this->widget('Widget_Security'); ?>
             <input type="hidden" name="_" value="<?php echo $security->getToken($this->request->getReferer())?>">
         </form>
-    </div>
-    <?php endif; ?>
+    </div>   
 </div>
-                
+    <?php else: ?>
+    <h4 class="comment-close">此处评论已关闭</h4>
+    <?php endif; ?>  
 <script>
 function showhidediv(id){  
 var sbtitle=document.getElementById(id);  
