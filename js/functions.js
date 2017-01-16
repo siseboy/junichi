@@ -24,3 +24,5 @@ var br = {
 }
 
 br.show('search-toggle', 'search-show');
+
+br.show('wechat-toggle', 'wechat-show');

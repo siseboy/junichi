@@ -14,7 +14,7 @@
 	<script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
 	<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-<link rel="shortcut icon" href="<?php $this->options->themeUrl('images/favicon.png'); ?>">
+<link rel="shortcut icon" href="<?php if($this->options->favicon): $this->options->favicon(); else: $this->options->themeUrl('images/touxiang.png');endif; ?>">
 <link rel="stylesheet" href="<?php $this->options->themeUrl('style.css?v=161216'); ?>">
 <title><?php $this->archiveTitle(array(
 	'category'  =>  _t(' %s '),
@@ -30,7 +30,7 @@
 <div class="container">
     <div class="left-col" style="background-image: url(<?php if($this->options->iosicon): $this->options->iosicon(); else: $this->options->themeUrl('images/left-bg.jpg');endif; ?>);">
         <header id="header">
-            <div class="profilepic"><a href="/" style="background-image: url(<?php if($this->options->favicon): $this->options->favicon(); else: $this->options->themeUrl('images/favicon.png');endif; ?>);"></a></div>
+            <div class="profilepic"><a href="/" style="background-image: url(<?php if($this->options->touxiang): $this->options->touxiang(); else: $this->options->themeUrl('images/touxiang.png');endif; ?>);"></a></div>
             <h1><a href="/"><?php $this->options->title() ?></a></h1>
             <p class="subtitle"><?php $this->options->slogan(); ?></p>
             <nav id="main-nav">
@@ -53,15 +53,25 @@
                     <?php if ($this->options->socialtwitter): ?>
                     <a class="social twitter" target="blank" href="<?php $this->options->socialtwitter(); ?>"><i class="iconfont icon-twitter"></i></a>
                     <?php endif; ?>
+                    <?php if ($this->options->socialwechat): ?>
+                    <a id="wechat-toggle" class="social wechat" href="javascript:"><i class="iconfont icon-wechat"></i></a>
+                    <?php endif; ?>
+                    <?php if ($this->options->socialqq): ?>
+                    <a class="social qq" target="blank" href="tencent://message/?uin=<?php $this->options->socialqq(); ?>&Site=junichi&Menu=yes"><i class="iconfont icon-qq"></i></a>
+                    <?php endif; ?>
                     <?php if ($this->options->socialweibo): ?>
                     <a class="social weibo" target="blank" href="<?php $this->options->socialweibo(); ?>"><i class="iconfont icon-weibo"></i></a>
                     <?php endif; ?>
-                    <a id="search-toggle" class="social search" href="javascript:">
-			            <i class="iconfont icon-sousuo"></i>
-		            </a>
+                    <?php if ($this->options->socialmusic): ?>
+                    <a class="social music" target="blank" href="<?php $this->options->socialmusic(); ?>"><i class="iconfont icon-music"></i></a>
+                    <?php endif; ?>
+                    <a id="search-toggle" class="social search" href="javascript:"><i class="iconfont icon-sousuo"></i></a>
                     <form id="search" method="post" action="/" role="search">
                         <input type="text" class="input" name="s" required="true" placeholder="...Search" dir="rtl">
                     </form>
+                    <div id="wechat">
+                        <img src="<?php $this->options->socialwechat(); ?>" />
+                    </div>
                 </div>
             </nav>
         </header>

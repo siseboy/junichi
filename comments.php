@@ -17,20 +17,15 @@ function threadedComments($comments, $options) {
     }
 ?>
 
-<li data-no-instant id="li-<?php $comments->theId(); ?>" class="comment-body<?php 
-if ($depth > 1 && $depth < 3) {
-    echo ' comment-child ';
-    $comments->levelsAlt('comment-level-odd', ' comment-level-even');
-}
-else if( $depth > 2){
-    echo ' comment-child2';
+<li data-no-instant id="li-<?php $comments->theId(); ?>" class="comment-body<?php
+if ($comments->levels > 0) {
+    echo ' comment-child';
     $comments->levelsAlt(' comment-level-odd', ' comment-level-even');
-}
-else {
+} else {
     echo ' comment-parent';
 }
 $comments->alt(' comment-odd', ' comment-even');
-echo $commentClass; 
+echo $commentClass;
 ?>">
     <div id="<?php $comments->theId(); ?>">
         <?php

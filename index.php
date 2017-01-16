@@ -4,7 +4,7 @@
  *
  * @package Junichi Theme
  * @author Jet Li
- * @version 1.1.0
+ * @version 1.2
  * @link www.uefeng.com
  */
 

@@ -45,11 +45,53 @@ a:hover {
     text-decoration: underline
 }
 
-@font-face {
-    font-family: iconfont;
-    src: url(//at.alicdn.com/t/font_wjtp89re8uf8ncdi.eot?t=1481876573819);
-    src: url(//at.alicdn.com/t/font_wjtp89re8uf8ncdi.eot?t=1481876573819#iefix) format('embedded-opentype'), url(//at.alicdn.com/t/font_wjtp89re8uf8ncdi.woff?t=1481876573819) format('woff'), url(//at.alicdn.com/t/font_wjtp89re8uf8ncdi.ttf?t=1481876573819) format('truetype'), url(//at.alicdn.com/t/font_wjtp89re8uf8ncdi.svg?t=1481876573819#iconfont) format('svg')
+
+@font-face {font-family: "iconfont";
+  src: url('//at.alicdn.com/t/font_iyzw7tg1eaeb3xr.eot?t=1484529418544'); /* IE9*/
+  src: url('//at.alicdn.com/t/font_iyzw7tg1eaeb3xr.eot?t=1484529418544#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/font_iyzw7tg1eaeb3xr.woff?t=1484529418544') format('woff'), /* chrome, firefox */
+  url('//at.alicdn.com/t/font_iyzw7tg1eaeb3xr.ttf?t=1484529418544') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/font_iyzw7tg1eaeb3xr.svg?t=1484529418544#iconfont') format('svg'); /* iOS 4.1- */
 }
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-wechat:before { content: "\e675"; }
+
+.icon-rss:before { content: "\e600"; }
+
+.icon-facebook:before { content: "\e63c"; }
+
+.icon-twitter:before { content: "\e6a4"; }
+
+.icon-aboutus:before { content: "\e601"; }
+
+.icon-weibo:before { content: "\e64c"; }
+
+.icon-google:before { content: "\e6b7"; }
+
+.icon-music:before { content: "\e612"; }
+
+.icon-collect:before { content: "\e603"; }
+
+.icon-home:before { content: "\e604"; }
+
+.icon-https:before { content: "\e6cb"; }
+
+.icon-sousuo:before { content: "\e605"; }
+
+.icon-links:before { content: "\e606"; }
+
+.icon-github:before { content: "\ee80"; }
+
+.icon-qq:before { content: "\e6f6"; }
+
 
 .iconfont {
     vertical-align: sub;
@@ -112,6 +154,7 @@ a:hover {
     height: 100%;
     background-color: #1fa4b5;
     background-size: cover;
+    background-image: url(images/left-bg.jpg);
     text-align: center
 }
 
@@ -197,11 +240,36 @@ a:hover {
 }
 
 .search-show #search input {
-    height: 30px;
+    height: 40px;
     border: 1px solid #ddd;
     border-radius: 4px;
     text-align: left
 }
+
+#wechat {
+    position: relative;
+    top: 10px;
+    z-index: 9999;
+    margin-left: 4%;
+    width: 90%;
+    height: 0;
+    -webkit-transform: translate3d(-999px, 0, 0);
+    transform: translate3d(-999px, 0, 0)
+}
+
+#wechat,
+#wechat img {
+    transition: all .3s ease-out
+}
+#wechat img {
+    width: 100%;
+}
+.wechat-show #wechat {
+    height: 30px;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0)
+}
+
 
 #main-nav {
     margin-left: 0
@@ -412,7 +480,7 @@ article .expire-tips {
 article .post-info {
     padding-top: 15px;
     font-size: 14px;
-    border-top: 1px dotted #eee;
+    border-top: 1px dotted #eee
 }
 
 article .entry-content {
@@ -577,9 +645,11 @@ article .entry-content video {
     padding-left: 0;
     list-style-type: none
 }
+
 .comment-at {
-    padding:0 0 10px 0;
+    padding: 0 0 10px 0
 }
+
 .comment-close {
     margin: 0 auto;
     margin-top: 10px;
@@ -588,8 +658,9 @@ article .entry-content video {
     padding: 30px;
     border: 1px dashed #eee;
     border-radius: 5px;
-    color: #999;
+    color: #999
 }
+
 .avatar {
     float: left;
     display: block;
@@ -785,9 +856,13 @@ textarea.form-control {
         width: 100%;
         height: 100%;
         background-color: #1fa4b5;
-        background-image: none;
+        background-size: cover;
+        background-position: center
     }
-
+    #header .subtitle {
+        margin: 5px 0;
+        color: #fff
+    }
     .mid-col {
         float: none;
         margin-left: 0;

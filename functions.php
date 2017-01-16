@@ -6,8 +6,10 @@ function themeConfig($form) {
 	$form->addInput($slogan);
 
 	//图片设置
-	$favicon = new Typecho_Widget_Helper_Form_Element_Text('favicon', NULL, NULL, _t('头像&Favicon'), _t('在这里输入头像链接,带http:// ,不填则使用主题自带的图片'));
+	$favicon = new Typecho_Widget_Helper_Form_Element_Text('favicon', NULL, NULL, _t('Favicon'), _t('在这里输入 Favicon 链接,带http:// ,不填则使用主题自带的图片'));
 	$form->addInput($favicon);
+	$touxiang = new Typecho_Widget_Helper_Form_Element_Text('touxiang', NULL, NULL, _t('头像'), _t('在这里输入头像链接,带http:// ,不填则使用主题自带的图片'));
+	$form->addInput($touxiang);
 	$iosicon = new Typecho_Widget_Helper_Form_Element_Text('iosicon', NULL, NULL, _t('左侧背景图'), _t('在这里输入背景图链接,带http:// ,不填则使用主题自带的图片'));
 	$form->addInput($iosicon);
     
@@ -25,7 +27,13 @@ function themeConfig($form) {
 	$form->addInput($socialtwitter);
 	$socialgoogle = new Typecho_Widget_Helper_Form_Element_Text('socialgoogle', NULL, NULL, _t('输入Google +链接'), _t('在这里输入Google +链接,带http://'));
 	$form->addInput($socialgoogle);
-
+	$socialwechat = new Typecho_Widget_Helper_Form_Element_Text('socialwechat', NULL, NULL, _t('输入微信二维码链接'), _t('在这里输入微信二维码链接,带http://'));
+	$form->addInput($socialwechat);
+	$socialqq = new Typecho_Widget_Helper_Form_Element_Text('socialqq', NULL, NULL, _t('输入QQ号码'), _t('在这里输入QQ号码'));
+	$form->addInput($socialqq);
+	$socialmusic = new Typecho_Widget_Helper_Form_Element_Text('socialmusic', NULL, NULL, _t('输入音乐链接'), _t('在这里输入音乐链接,带http://'));
+	$form->addInput($socialmusic);
+    
 	//附件源地址
 	$src_address = new Typecho_Widget_Helper_Form_Element_Text('src_add', NULL, NULL, _t('替换前地址'), _t('即你的附件存放链接，如http://www.yourblog.com/usr/uploads/'));
 	$form->addInput($src_address);
