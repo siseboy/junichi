@@ -67,7 +67,7 @@
                     <?php endif; ?>
                     <a id="search-toggle" class="social search" href="javascript:"><i class="iconfont icon-sousuo"></i></a>
                     <form id="search" method="post" action="/" role="search">
-                        <input type="text" class="input" name="s" required="true" placeholder="...Search" dir="rtl">
+                        <input type="text" class="input" name="s" required="true" placeholder="...Search">
                     </form>
                     <div id="wechat">
                         <img src="<?php $this->options->socialwechat(); ?>" />
