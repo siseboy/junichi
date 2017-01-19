@@ -4,8 +4,8 @@
  *
  * @package Junichi Theme
  * @author Jet Li
- * @version 1.2
- * @link www.uefeng.com
+ * @version 1.2.1
+ * @link https://uefeng.com
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;

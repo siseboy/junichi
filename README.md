@@ -1,3 +1,29 @@
+###更新（2017年1月19日）
+
+- 增加对 Hanny 友链插件的支持(没用插件的直接编辑源文件来修改友链)
+- 修正某些小bug
+
+PS：因为友链插件输出的原因，如果要和本站一样效果，需要修改插件来实现。
+
+1、修改 Links 插件目录 Plugin.php 文件的 267行 替换为 
+
+```php
+        } else if ($pattern == "SHOW_JUNICHI") {
+			$pattern = "<li><a href=\"{url}\" target=\"_blank\">{name}</a><span class=\"more\">（{title}）</span></li>\n";
+        }
+```
+2、修改主题目录 page-links.php 文件的 18行 替换为
+
+```php
+        <ul class="links iconfont">
+        <?php Links_Plugin::output('SHOW_JUNICHI',0,'https'); ?>
+        </ul>
+        <ul>
+        <?php Links_Plugin::output('SHOW_JUNICHI',0,'http'); ?>
+        </ul> 
+```
+3、添加友链的时候 若是 https 的链接添加链接分类为 https，否则链接分类为 http。
+
 ###更新（2017年1月16日）
 
 根据网友要求更新一些细节，例如
@@ -20,7 +46,7 @@ https://github.com/siseboy/junichi
 
 主题预览：
 
-![image](https://oh34w4h6l.qnssl.com/screenshot.jpg)
+![image](https://oh34w4h6l.qnssl.com/screenshot.jpg?imageView3)
 
 ###主题特性
 
@@ -43,10 +69,8 @@ https://github.com/siseboy/junichi
 
 然后是图片CDN，推荐使用七牛云镜像
 
-主题背景图和头像请直接替换images目录下的图片
-
 缩略名命名为about，建立关于单页，
 
 选择 Archives 的页面模板，缩略名命名为archives，建立归档页，
 
-选择 Links 的页面模板，缩略名命名为links，建立友链页面。因为 Typecho 的编辑器原因，友情链接部分需要直接编辑源文件来增加或删除。
+选择 Links 的页面模板，缩略名命名为links，建立友链页面。

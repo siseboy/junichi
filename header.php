@@ -15,7 +15,7 @@
 	<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 <link rel="shortcut icon" href="<?php if($this->options->favicon): $this->options->favicon(); else: $this->options->themeUrl('images/touxiang.png');endif; ?>">
-<link rel="stylesheet" href="<?php $this->options->themeUrl('style.css?v=161216'); ?>">
+<link rel="stylesheet" href="<?php $this->options->themeUrl('style.css?v=170119'); ?>">
 <title><?php $this->archiveTitle(array(
 	'category'  =>  _t(' %s '),
 	'search'    =>  _t(' %s '),

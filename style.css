@@ -794,6 +794,13 @@ textarea.form-control {
     font-size: .9em;
     line-height: 2.2
 }
+.links li:before {
+    padding-right: 3px;
+    color: #46ce4b;
+    vertical-align: bottom;
+    font-size: 17px;
+    content: "\e6cb";
+}
 
 @media screen and (max-width:1024px) {
     article {
@@ -857,7 +864,7 @@ textarea.form-control {
         height: 100%;
         background-color: #1fa4b5;
         background-size: cover;
-        background-position: center
+        background-position: center -55%
     }
     #header .subtitle {
         margin: 5px 0;
@@ -1025,3 +1032,5 @@ pre[class*=language-] {
 .token.entity {
     cursor: help
 }
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help
