@@ -15,7 +15,7 @@
 	<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 <link rel="shortcut icon" href="<?php if($this->options->favicon): $this->options->favicon(); else: $this->options->themeUrl('images/touxiang.png');endif; ?>">
-<link rel="stylesheet" href="<?php $this->options->themeUrl('style.css?v=170119'); ?>">
+<link rel="stylesheet" href="<?php $this->options->themeUrl('style.css?v=170120'); ?>">
 <title><?php $this->archiveTitle(array(
 	'category'  =>  _t(' %s '),
 	'search'    =>  _t(' %s '),
@@ -67,7 +67,7 @@
                     <?php endif; ?>
                     <a id="search-toggle" class="social search" href="javascript:"><i class="iconfont icon-sousuo"></i></a>
                     <form id="search" method="post" action="/" role="search">
-                        <input type="text" class="input" name="s" required="true" placeholder="...Search" dir="rtl">
+                        <input type="text" class="input" name="s" required="true" placeholder="...Search">
                     </form>
                     <div id="wechat">
                         <img src="<?php $this->options->socialwechat(); ?>" />

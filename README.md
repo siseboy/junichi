@@ -1,3 +1,8 @@
+###更新（2017年1月20日）
+
+- iconfont库 增加了新图标
+- 修复搜索框文字光标方向错误（ 感谢 @FaithPatrick 提交 ）
+
 ###更新（2017年1月19日）
 
 - 增加对 Hanny 友链插件的支持(没用插件的直接编辑源文件来修改友链)
@@ -8,20 +13,21 @@ PS：因为友链插件输出的原因，如果要和本站一样效果，需要
 1、修改 Links 插件目录 Plugin.php 文件的 267行 替换为 
 
 ```php
-        } else if ($pattern == "SHOW_JUNICHI") {
-			$pattern = "<li><a href=\"{url}\" target=\"_blank\">{name}</a><span class=\"more\">（{title}）</span></li>\n";
-        }
+} else if ($pattern == "SHOW_JUNICHI") {
+$pattern = "<li><a href=\"{url}\" target=\"_blank\">{name}</a><span class=\"more\">（{title}）</span></li>\n";
+}
 ```
 2、修改主题目录 page-links.php 文件的 18行 替换为
 
 ```php
-        <ul class="links iconfont">
-        <?php Links_Plugin::output('SHOW_JUNICHI',0,'https'); ?>
-        </ul>
-        <ul>
-        <?php Links_Plugin::output('SHOW_JUNICHI',0,'http'); ?>
-        </ul> 
+<ul class="links iconfont">
+<?php Links_Plugin::output('SHOW_JUNICHI',0,'https'); ?>
+</ul>
+<ul>
+<?php Links_Plugin::output('SHOW_JUNICHI',0,'http'); ?>
+</ul> 
 ```
+
 3、添加友链的时候 若是 https 的链接添加链接分类为 https，否则链接分类为 http。
 
 ###更新（2017年1月16日）
