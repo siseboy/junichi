@@ -266,6 +266,14 @@ a:hover {
     padding: 0 70px 0 40px
 }
 
+
+.icon-https {
+    padding-right: 3px;
+    color: #46ce4b;
+    vertical-align: bottom;
+    font-size: 17px;
+}
+
 article {
     position: relative;
     padding: 30px 0;
@@ -743,13 +751,6 @@ textarea.form-control {
     text-align: center;
     font-size: .9em;
     line-height: 2.2
-}
-.links li:before {
-    padding-right: 3px;
-    color: #46ce4b;
-    vertical-align: bottom;
-    font-size: 17px;
-    content: "\e6cb";
 }
 
 @media screen and (max-width:1024px) {

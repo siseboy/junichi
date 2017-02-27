@@ -18,9 +18,10 @@
                             <?php Links_Plugin::output('SHOW_TEXT'); ?>
                             </ul>                       
                             <?php else : ?>
-                            <ul class="links iconfont">
-					           <li><a href="https://uefeng.com/" target="_blank">有意</a><span class="more">（IT 民工的折腾记录）</span></li>
-				            </ul>
+                            <ul>
+                            <!-- 不带 Https 图标需要删除 <i class="iconfont icon-https"></i>  -->
+					           <li><i class="iconfont icon-https"></i><a href="https://uefeng.com/" target="_blank">有意</a><span class="more">（IT 民工的折腾记录）</span></li>
+                            </ul>
 				        <?php endif; ?> 
 					</div>
 				</article>
