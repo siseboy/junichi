@@ -17,14 +17,14 @@
 								$year_tmp = date('Y',$archives->created);
 								$mon_tmp = date('m',$archives->created);
 								$y=$year; $m=$mon;
-								if ($mon != $mon_tmp && $mon > 0) $output .= '</ul></li>';
+								if ($mon != $mon_tmp && $mon > 0) $output .= '</ul>';
 								if ($year != $year_tmp && $year > 0) $output .= '</ul>';
 								if ($year != $year_tmp) {
 								$year = $year_tmp;
 								}
-								if ($mon != $mon_tmp) {
+								if ($mon != $mon_tmp || ($mon == $mon_tmp && $y != $year_tmp)) {
 								$mon = $mon_tmp;
-								$output .= '<h3>'. $year .' 年'. $mon .' 月</h3>';
+								$output .= '<h3>'. $year_tmp .' 年'. $mon_tmp .' 月</h3>';
 								$output .= '<ul>';
 								}
 								$output .= '<li><a href="'.$archives->permalink .'">'. $archives->title .'</a>&nbsp;&nbsp;&nbsp;&nbsp;('.date('M j, Y',$archives->created).')</li>';
