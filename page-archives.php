@@ -4,6 +4,7 @@
     *
     * @package custom
     */
+	ini_set("error_reporting","E_ALL & ~E_NOTICE"); // 解决 Notice: Undefined variable
     $this->need('header.php'); ?>
 
 	<div class="mid-col">
