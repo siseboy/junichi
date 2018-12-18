@@ -58,7 +58,7 @@ https://github.com/siseboy/junichi
 
 主题预览：
 
-![image](https://oh34w4h6l.qnssl.com/screenshot.jpg?imageView3)
+![image](https://uefeng.com/usr/uploads/2016/11/2121536658.png)
 
 ###主题特性
 
