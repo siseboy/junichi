@@ -29,7 +29,7 @@ $this->need('header.php');
 				</div>
 				</article>
 				<?php endwhile; ?>
-				<?php $this->pageLink('<nav class="page-navi"><i class="icon icon-left"></i> 上一页','prev');?><?php $this->pageLink('下一页 <i class="icon icon-right"></i></nav>','next');?>
+				<nav class="page-navi"><?php $this->pageLink('<i class="icon icon-left"></i> 上一页','prev');?><?php $this->pageLink('<i class="icon icon-right"></i>下一页','next');?></nav>
 		</div>
 
 <?php $this->need('footer.php'); ?>
