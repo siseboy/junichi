@@ -589,6 +589,25 @@ article .entry-content video {
     border: 1px solid #2479cc
 }
 
+.entry-content .links {
+    padding: 0
+}
+
+.entry-content .links li {
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+.entry-content .links li span {
+    padding: 0 0 0 30px; 
+    font-size: 10pt;
+    color: #999;   
+}
+
+.entry-content .links li a:hover {
+    border-bottom: 1px solid
+}
+
 #comments a {
     color: #aaa
 }
