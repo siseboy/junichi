@@ -10,7 +10,7 @@ https://github.com/siseboy/junichi
 
 ![image](https://uefeng.com/usr/uploads/2016/11/2121536658.png)
 
-###主题特性
+##主题特性
 
  - 无jQuery，无前端框架，轻量级
  - InstantClick实现PJAX无刷新操作
@@ -19,11 +19,11 @@ https://github.com/siseboy/junichi
  - 支持图片CDN
  - 支持社交按钮
 
-###主题启用
+##主题启用
 
 下载后，重命名文件夹为junichi，然后放到typecho里的theme目录内，进入typecho后台，外观，启用即可。
 
-###主题设置
+##主题设置
 
 进入主题外观设置
 
@@ -39,7 +39,7 @@ https://github.com/siseboy/junichi
 
 建立缩略名命名为 links 的友链页面。
 
-###最后一次更新（2019年11月1日）
+##最后一次更新（2019年11月1日）
 
 友链页面内容，可按照下面示例获得和我一样的友链效果。 
 
