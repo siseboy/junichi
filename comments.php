@@ -29,8 +29,8 @@ echo $commentClass;
 ?>">
     <div id="<?php $comments->theId(); ?>">
         <?php
-            $host = '//cdn.v2ex.com';
-            $url = '/gravatar/';
+            $host = '//gravatar.loli.net';
+            $url = '/avatar/';
             $size = '80';
             $rating = Helper::options()->commentsAvatarRating;
             $hash = md5(strtolower($comments->mail));
